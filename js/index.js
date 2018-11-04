@@ -30,7 +30,7 @@ function displayCommits() {
   console.log(commits);
   let commitList = '';
   for (var i = 0; i < commits.length; i++) {
-    commitList += '<ul><li>' + commits[i]['author']['login'] + '</li><li>' + commits[i]['commit']['author']['name'] + '</li><li>' + commits[i]['commit']['message'] + '</li></ul>';
+    commitList += '<ul><li>' + commits[i]['committer']['login'] + '</li><li>' + commits[i]['commit']['author']['name'] + '</li><li>' + commits[i]['commit']['message'] + '</li></ul>';
   }
   document.getElementById('details').innerHTML = commitList;
 }
