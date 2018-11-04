@@ -28,4 +28,9 @@ function getCommits(el) {
 function displayCommits() {
   let commits = JSON.parse(this.responseText);
   console.log(commits);
+  let commitList = '';
+  for (var i = 0; i < repos.length; i++) {
+    commitList += '<ul><li></li></ul>';
+  }
+  document.getElementById('details').innerHTML = commitList;
 }
