@@ -35,3 +35,23 @@ function displayCommits() {
   }
   document.getElementById('details').innerHTML = commitList;
 }
+
+function getBranches(el) {
+  console.log('worked');
+  let repo = el.dataset.repository;
+  let username = el.dataset.username;
+  const req = new XMLHttpRequest();
+  req.addEventListener('load', displayCommits);
+  req.open('GET', 'https://api.github.com/repos/' + username + '/' + repo + '/branches');
+  req.send();
+}
+
+function displayBranches() {
+  let branches = JSON.parse(this.responseText);
+  console.log(branches);
+  let branchList = '<ul>';
+  for (var i = 0; i < branches.length; i++) {
+    branchList += '<li>' + '</li>';
+  }
+  document.getElementById('details').innerHTML = branchList;
+}
