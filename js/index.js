@@ -51,7 +51,7 @@ function displayBranches() {
   console.log(branches);
   let branchList = '<ul>';
   for (var i = 0; i < branches.length; i++) {
-    branchList += '<li>' + '</li>';
+    branchList += '<li>' + branches[i].name + '</li>';
   }
   document.getElementById('details').innerHTML = branchList;
 }
