@@ -18,10 +18,11 @@ function displayRepositories() {
 
 function getCommits(el) {
   console.log('worked');
-  let url = el.dataset.url;
+  let repo = el.dataset.repository;
+  let username = el.dataset.username;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
-  req.open('GET', url + '/commits');
+  req.open('GET', 'https://api.github.com/repos/' + username + '/' + repo + '/commits');
   req.send();
 }
 
