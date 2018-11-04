@@ -29,7 +29,7 @@ function displayCommits() {
   let commits = JSON.parse(this.responseText);
   console.log(commits);
   let commitList = '';
-  for (var i = 0; i < repos.length; i++) {
+  for (var i = 0; i < commits.length; i++) {
     commitList += '<ul><li></li></ul>';
   }
   document.getElementById('details').innerHTML = commitList;
